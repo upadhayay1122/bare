@@ -1,0 +1,66 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Add device </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+  {% for mess in get_flashed_messages() %}
+  <div class="alert alert alert-info alert-dismissible fade show" role="alert">
+<strong>Check Again!</strong> Ip address you entered is not valid.
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+</div>
+
+  {% endfor %}
+
+
+
+
+
+  <h2><p class="lead display-8">Provide Below Details !</p></h2>
+
+    <form  method="post">
+     {{ form.hidden_tag() }}
+     <div class="form-group">
+     {{ form.ipaddress.label }} {{ form.ipaddress (class='form-control') }}
+
+     </div>
+
+     <div class="form-group">
+     {{ form.username.label }} {{ form.username (class='form-control') }}
+     <small id="emailHelp" class="form-text text-muted">Username requires from the device, you are adding!.</small>
+     </div>
+
+
+     <div class="form-group">
+     {{ form.password.label }} {{ form.password (class='form-control')}}
+     <small id="emailHelp" class="form-text text-muted">Password is only secretely stored in DB!.</small>
+     </div>
+
+     <div class="form-group">
+     {{ form.Groupname.label }} {{ form.Groupname (class='form-control') }}
+     </div>
+
+
+     <div class="jumbotron">
+     {{ form.submit(class="btn btn-primary btn-lg") }}
+     </div>
+
+
+
+      </form>
+  </body>
+</html>
+
+{% endblock %}
