@@ -44,7 +44,7 @@
   <input class="form-control form-control-dark w-25" type="text" placeholder="Search" aria-label="Search">
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
-      <a class="nav-link" href="#">Sign out</a>
+      <a class="nav-link" href="{{url_for('index')}}">Sign out</a>
     </li>
   </ul>
 </nav>
@@ -55,7 +55,7 @@
       <div class="sidebar-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" href="#">
+            <a class="nav-link active" href="{{url_for('home')}}">
               <span data-feather="home"></span>
                BARE DASHBOARD <span class="sr-only">(current)</span>
             </a>
@@ -67,9 +67,9 @@
             </a>
           </h6>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{url_for('adddevice')}}">
               <span data-feather="plus-square"></span>
-              Add evice
+              Add device
             </a>
           </li>
           <li class="nav-item">
@@ -118,7 +118,7 @@
     </nav>
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <!-- <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Dashboard</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
@@ -132,7 +132,7 @@
         </div>
       </div>
 
-      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
 
       <!-- <h2>Section title</h2>
       <div class="table-responsive">
@@ -272,5 +272,10 @@
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script> -->
         <script src="../static/feather.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-        <script src="../static/dashboard.js"></script></body>
+        <script src="../static/dashboard.js"></script>
+        <script src="..static\ipaddress-validation.js"></script>
+{% block content %}
+
+{% endblock %}
+      </body>
 </html>

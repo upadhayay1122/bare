@@ -1,0 +1,29 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<main role="main" class="col-md-15 ml-sm-auto col-lg-20 px-md-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    {% if confirm %}
+      <h1> Device added succesfuly</h1>
+
+    {% else %}
+    <ul>
+      {% if not num_check %}
+        <li> You have entered the Charater, Ip address can only have numberic values, Please correct ! </li>
+      {% endif %}
+
+      {% if not ip_len_check %}
+        <li> Ip address must have 4 octate, Please correct ! </li>
+      {% endif %}
+
+
+      {% if not ip_range_check %}
+        <li> You have entered number smaller then 1 or more then 255, which is not a valid ip address, Please correct ! </li>
+      {% endif %}
+
+    </ul>
+
+    {% endif %}
+
+
+{% endblock %}

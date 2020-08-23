@@ -1,0 +1,31 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<form  action="{{url_for('confirmation')}}" >
+  <div class="form-group">
+    <label for="formGroupExampleInput">IP ADDRESS</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" name = "ip address" placeholder=" Device management ip">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">DEVICE USER NAME</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" name = "username" placeholder="Device user name">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput">DEVICE PASSWORD</label>
+    <input type="password" class="form-control" id="formGroupExampleInput" placeholder="password">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">GROUP NAME</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Group name">
+  </div>
+  <div class="form-group">
+    <!-- <label for="formGroupExampleInput2">GROUP NAME</label> -->
+    <input class="btn btn-primary" type="submit" value="Submit">
+  </div>
+  <!-- <a class="btn btn-primary" href="{{url_for('confirmation')}}" role="button">Submit</a> -->
+  <script src="..static\ipaddress-validation.js"></script>
+  <!-- <input class="btn btn-primary" type="submit" value="Submit"> -->
+</form>
+
+{% endblock %}
